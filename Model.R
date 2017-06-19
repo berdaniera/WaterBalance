@@ -162,8 +162,8 @@ q2 <- (0.25^2)*(q1-1)
 # regression error
 r1 <- r2 <- 0.001
 # process error - sig
-s1 <- 5000#nrow(dat)#100#r1#
-s2 <- (2^2)*(s1-1)#(10^2)*(nt-1)#r2#
+s1 <- 5000
+s2 <- (2^2)*(s1-1)
 #s1 <- s2 <- 0.001
 #hist(sqrt(1/rgamma(10000,s1,s2)))
 #quantile(sqrt(1/rgamma(10000,s1,s2)))
@@ -181,7 +181,6 @@ ng <- 1000
 burns <- 100
 
 # Store data
-# Parameter names match those in Equation 5 in the manuscript
 etmugib <- etgib <- petgib <- matrix(NA,ng,nrow(dat))
 wgib <- matrix(NA,ng,ni)
 bgib <- matrix(NA,ng,ncol(design))
