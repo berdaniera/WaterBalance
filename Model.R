@@ -132,7 +132,7 @@ updateSigmaIG <- function(y,mu,s1,s2){
 ############
 # Initial values
 # REMEMBER TO SORT DATA BY INDIVIDUAL AND DROUGHT IDs
-etG <- dat$y # best estimate is observed value
+etG <- dat$y # best initial estimate is observed value
 piG <- dat$pet # latent PET
 betaG <- rep(0,ncol(design))
 minw <- log(sapply(1:ni,function(x) max(tapply(dat$y[which(dat$i==x)],dat$d[which(dat$i==x)],sum)))*0.85) # try a fraction too....
@@ -235,3 +235,12 @@ for(g in 1:ng){
   setTxtProgressBar(prog, g)
 }
 close(prog)
+
+# model coefficients
+mod_coef <- apply(bgib,2,mean)
+names(mod_coef) <- colnames(design)
+as.matrix(mod_coef)
+
+# species effects
+spp_effects <- exp(mod_coef[grepl("spp.", names(mod_coef))])
+as.matrix(spp_effects)
