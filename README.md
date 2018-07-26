@@ -17,6 +17,8 @@ This is a repository for the analysis of tree water balance by Berdanier and Cla
 
 # About
 
+[![DOI](https://zenodo.org/badge/55159966.svg)](https://zenodo.org/badge/latestdoi/55159966)
+
 License: MIT
 
 Contact Aaron Berdaner (aaron.berdanier@gmail.com) with questions.
